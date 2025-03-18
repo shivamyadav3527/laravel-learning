@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\userController;
 use App\Http\Controllers\studentsController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\UploadController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\App;
@@ -43,6 +44,7 @@ Route::get('home/{lang}', function($lang){
 });
 Route::view('register', 'register');
 Route::post('registered', [studentsController::class,'registerStudent']);
+Route::get('sendMail', [MailController::class, 'sendingMail']);
 
 
 
